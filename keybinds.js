@@ -1,7 +1,7 @@
 /*---------------------------------To do----------------------------------*/
 //*Come up with a cool and good sounding Name
 //*Corect the english spelling widthin the comments
-//*Check if ctrl,alt,shift is pressed and if its requerd to do the actions!
+//*Check if ctrl,alt,shift is pressed and if its requerd to do the actions! |----- Poseble solution, check addBind function and run function ----|
 //*Figure out how to use parameters in the callback call
 //*Add event listner for Mouse clicks
 //*Validate keybinding so you dont have 2 off the same key
@@ -65,6 +65,7 @@ function init(kbArray){
 }
 
 /* Function for adding keybindes to the keybinds array. shift, ctrl,alt dusent do any thing at the moment*/
+/* insted of sepratrly shift,ctrl,alt put in a string for mode, exeple "alt" or "shift-alt" */
 function addKeybind(key,callback,shift,ctrl,alt){
     var key = key.toUpperCase();
     
@@ -160,6 +161,26 @@ function run(e){
     for(var i = 0; i<keybinds.length; i++){
         if(e.keyCode == keybinds[i].keycode){
             keybinds[i].callback();
+            //Set switch case here for mode
+            /*
+            switch(keybinds[i].mode) {
+                case "shift":
+                    if(e.shiftKey){
+                        keybinds[i].callback();
+                    }
+                    break;
+                case "alt":
+                    if(e.altKey){
+                        keybinds[i].callback();
+                    }
+                    break;
+                case "ctrl":
+                    if(e.ctrlKey){
+                        keybinds[i].callback();
+                    }
+                    break;
+            } 
+            */
         }
     }
     //console.log(e.keyCode);
