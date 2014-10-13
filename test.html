@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Test file for Keybinds.js</title>
-    <script src="keybinds.js"></script>
+    <script src="lib/keybinds.js"></script>
     <style>
         #canvas{
             border: 2px solid #000;
@@ -29,17 +29,41 @@
             
             //addKeybind(key,callback,shift,ctrl,alt)
             //sets up all the keybidnings for the document
-            addKeybind("uparrow",moveUp,false,false,false);
-            addKeybind("rightarrow",moveRight,false,false,false);
-            addKeybind("leftarrow",moveLeft,false,false,false);
-            addKeybind("downarrow",moveDown,false,false,false);
-            addKeybind("space",pew,false,false,false);
+            //addKeybind("uparrow",moveUp,false,false,false);
+            //addKeybind("rightarrow",moveRight,false,false,false);
+            //addKeybind("leftarrow",moveLeft,false,false,false);
+            //addKeybind("downarrow",moveDown,false,false,false);
+            //addKeybind("space",pew,false,false,false);
+            
+            addKeybind("s","none",none);
+            addKeybind("s","ctrl",ctrl);
+            addKeybind("s","shift",shift);
+            addKeybind("s","alt",alt);
+            
+            console.log(getAllKeybinds());
             
             //Loggs all keybidnings
             console.log(getAllKeybinds());
             
             //is for drawing the rektangle on the the canvas
             draw();
+        }
+        
+        
+        function none(){
+            console.log("none");
+        }
+        
+        function ctrl(){
+            console.log("ctrl");
+        }
+        
+        function shift(){
+            console.log("shift");
+        }
+        
+        function alt(){
+            console.log("alt");
         }
         
         //All functions here are callback funktions for the keybindings
