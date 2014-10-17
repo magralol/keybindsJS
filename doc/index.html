@@ -4,8 +4,87 @@
     <meta charset="utf-8">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/default.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+
 </head>
 <body>
+    
+    <div class="container">
+        <div class="jumbotron">
+          <h1>KeybindsJS</h1>
+          <p>Keybinding made easy in javascript</p><br><br>
+          <p><a class="btn btn-default btn-lg" href="https://github.com/magralol/keybindsJS"><i class="fa fa-github-square"></i>
+View on Github</a><a class="btn btn-success btn-lg" role="button" id="download-btn"><i class="fa fa-download"></i> Download</a><a class="btn btn-primary btn-lg" role="button" href="doc.html" id="doc-btn"><i class="fa fa-file-code-o"></i>
+Ducumentation</a></p>
+        </div>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+        <div class="well well-lg">
+            
+            <h2 id="quickstart">Quick start</h2>
+            
+            <div class="row">
+                <canvas class="col-md-6" id="canvas">
+                    your borowser duse not suport canvas, please update your browser.
+                </canvas>
+                <pre class="col-md-6"><code class="javascript">
+
+                kjs.init("#canvas", function(){
+                    kjs.addKeybind("w","none",moveUp);
+                    kjs.addKeybind("s","none",moveDown);
+                    kjs.addKeybind("a","none",moveLeft);
+                    kjs.addKeybind("d","none",moveRight);
+                    
+                    kjs.addKeybind("uparrow","none",moveUp);
+                    kjs.addKeybind("downarrow","none",moveDown);
+                    kjs.addKeybind("leftarrow","none",moveLeft);
+                    kjs.addKeybind("rightarrow","none",moveRight);
+                });
+                
+                /* Just some functions to demonstrate keybindsJS */
+                function moveUp(){
+                
+                }
+                
+                function moveDown(){
+                
+                }
+                
+                function moveLeft(){
+                
+                }
+                
+                function moveRight(){
+                    
+                }
+                
+                </code></pre>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        
+        var canvas, ctx;
+        
+        $(function(){
+            
+            canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+            
+            ctx.font="20px impact";
+            ctx.fillStyle='#000';
+            ctx.fillText("KeybindsJS!",90,80);
+            
+        });
+        
+    </script>
 </body>
 </html>
