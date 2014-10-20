@@ -14,9 +14,17 @@
 }
 
 
-#canvas{
+#first-panel{
     
-    /*border: 2px solid #000;*/
-    /*width: 40%;*/
+    margin-top: 5%;
     
+}
+
+.desciption{
+    float: right;
+}
+
+.exlanation{
+    margin-top: 5%;
+    display: none;
 }

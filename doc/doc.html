@@ -9,6 +9,7 @@
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../lib/keybinds.js"></script>
+    <script src="script.js"></script>
     
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/default.min.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
@@ -18,6 +19,7 @@
     
     <div class="container">
         
+        <!--
         <div class="panel panel-default">
             <div class="panel-body">
 
@@ -36,6 +38,34 @@
                 
             </div>
         </div>
+        -->
+        
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="panel panel-default" id="first-panel">
+                  <div class="panel-body">
+                    <b>kjs.init()</b><div class="desciption">Inizalation function</div>
+                    <div class="well well-lg exlanation">
+                        Parameters
+                        <ul>
+                            <li>Element</li>
+                            <li>Callback</li>
+                        </ul>
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <b>kjs.addKeybind()</b><div class="desciption">Function for adding a keybind</div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        
     </div>    
 </body>
 </html>
