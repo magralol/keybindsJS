@@ -1,7 +1,8 @@
 <html>
 <head>
     <title>Test file for Keybinds.js</title>
-    <script src="lib/keybinds.js"></script>
+    <!--<script src="lib/keybinds.js"></script>-->
+    <script src="lib/oopkeybinds2.js"></script>
     <style>
         #canvas{
             border: 2px solid #000;
@@ -22,8 +23,13 @@
         var y = x*5;
         var speed = 5;
         
+        init("canvas", function(){
+            set("A","none",function(){
+                
+            });
+        });
         
-        window.onload = function (){
+        /*window.onload = function (){
             init();
             //logKeys();
             
@@ -47,7 +53,9 @@
             
             //is for drawing the rektangle on the the canvas
             draw();
-        }
+        }*/
+        
+        
         
         
         function none(){
