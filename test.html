@@ -2,7 +2,7 @@
 <head>
     <title>Test file for Keybinds.js</title>
     <!--<script src="lib/keybinds.js"></script>-->
-    <script src="lib/oopkeybinds2.js"></script>
+    <script src="lib/typescript/keybinds.js"></script>
     <style>
         #canvas{
             border: 2px solid #000;
@@ -16,51 +16,29 @@
     <script>
         
         //Global variables are for canvas and are not related to the keybinds.js
-        var c = document.getElementById("canvas");
-        var ctx = c.getContext("2d");
-        
         var x = 5;
         var y = x*5;
         var speed = 5;
-        
-        init("canvas", function(){
-            set("s","ctrl",function(){
+        window.onload = function(){
+            var c = document.getElementById("canvas");
+            var ctx = c.getContext("2d");
+            
+            var kjs = new Keybinds();
+            
+            kjs.init("#canvas", function(){
+                
+                kjs.bind("s","ctrl",function(){
+                  console.log("test"); 
+                });
+                
+                kjs.bind("s","none",function(){
+                  console.log("test"); 
+                });
                 
             });
-            set("s","shift-ctrl",function(){
-                
-            });
-            
-        });
-        
-        /*window.onload = function (){
-            init();
-            //logKeys();
-            
-            //addKeybind(key,callback,shift,ctrl,alt)
-            //sets up all the keybidnings for the document
-            //addKeybind("uparrow",moveUp,false,false,false);
-            //addKeybind("rightarrow",moveRight,false,false,false);
-            //addKeybind("leftarrow",moveLeft,false,false,false);
-            //addKeybind("downarrow",moveDown,false,false,false);
-            //addKeybind("space",pew,false,false,false);
-            
-            addKeybind("s","none",none);
-            addKeybind("s","ctrl",ctrl);
-            addKeybind("s","shift",shift);
-            addKeybind("s","alt",alt);
-            
-            //console.log(getAllKeybinds());
-            
-            //Loggs all keybidnings
-            console.log(getAllKeybinds());
-            
-            //is for drawing the rektangle on the the canvas
-            draw();
-        }*/
-        
-        
-        
+
+        }
+ 
         
         function none(){
             console.log("none");
