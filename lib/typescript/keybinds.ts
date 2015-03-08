@@ -53,68 +53,48 @@ class Keybinds {
             this.event = e;
             callback();
         });
+        
+        /* for testing */
+        document.addEventListener("click", function(e){
+            e.preventDefault();
+            /* 
+                e.clientX and e.clientY for possion 
+                e.target for the target element
+                e.witch or e.button for witch button is pressed
+                
+            */
+            console.log(e);
+        });
     }
     
-
+    /* TODO Check for meta key */
     public bind(key: String, modifyer: String, callback: Function): void{
         event.preventDefault();
-        //console.log(event.keyCode);
-        //console.log(" ");
-        //check get keycode against key
-        //then make switchcase for all modifyers
-        //then in eatch switch case check if modifier is pressed when key is pressed
-        //the run callback
-        
-        //console.log(event);
-        
-        /*
-            TODO Fix so lone modifyer is not triggerd when there is a dubble modifyer 
-            See under ctrl case for fix. do that for all singel ones.
-        */
         if(event.keyCode == this.getKeycode(key)){
             switch(modifyer) {
                 case "none":
-                    if(event.shiftKey || event.altKey || event.ctrlKey){  
-                    }else{
-                        console.log("none"); 
-                    }
+                    if(!event.ctrlKey && !event.shiftKey && !event.altKey) console.log("none"); 
                     break;
                 case "shift":
-                    if(event.shiftKey){
-                        console.log("shift");
-                    }
+                    if(!event.ctrlKey && event.shiftKey && !event.altKey) console.log("shift");
                     break;
                 case "alt":
-                    if(event.altKey){ 
-                        console.log("alt");
-                    }
+                    if(!event.ctrlKey && !event.shiftKey && event.altKey) console.log("alt");
                     break;
                 case "ctrl":
-                    /* Working but is a bad fix */
-                    if(event.shiftKey || event.altKey) {}  
-                    else if(event.ctrlKey){
-                        console.log("ctrl");
-                    }
+                    if(event.ctrlKey && !event.shiftKey && !event.altKey) console.log("ctrl");
                     break;
                 case "shift-ctrl":
-                    if(event.shiftKey && event.ctrlKey){
-                        console.log("shift-ctrl");
-                    }
+                    if(event.ctrlKey && event.shiftKey && !event.altKey) console.log("shift-ctrl");
                     break;
                 case "shift-alt":
-                    if(event.shiftKey && event.altKey){
-                        console.log("shift-alt");
-                    }
+                    if(!event.ctrlKey && event.shiftKey && event.altKey) console.log("shift-alt");
                     break;
                 case "ctrl-alt":
-                    if(event.ctrlKey && event.altKey){
-                        console.log("ctrl-alt");
-                    }
+                    if(event.ctrlKey && !event.shiftKey && event.altKey) console.log("ctrl-alt");
                     break;
                 case "shift-ctrl-alt":
-                    if(event.shiftKey && event.ctrlKey && event.altKey){
-                        console.log("shift-ctrl-alt");
-                    }
+                   if(event.ctrlKey && !event.shiftKey && !event.altKey) console.log("shift-ctrl-alt");
                     break;
                 default:
                     console.error(modifyer + " is not a valid modifyer configuration. Read the API form more information.");
