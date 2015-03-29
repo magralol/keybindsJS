@@ -9,6 +9,8 @@
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
+    <script src="../lib/keybinds.js"></script>
+    
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/zenburn.min.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
 
@@ -35,16 +37,24 @@ Ducumentation</a></p>
                 </canvas>
                 <pre class="col-md-6"><code class="javascript">
                 
-                var kjs = new kjs();
+                var kjs = new Keybinds();
                 
-                kjs.init("canvas", function(){
-                     
-                    kjs.bind("s","ctrl", function(){
+                kjs.init(function(){
 
+                    kjs.bind("w","none", function(){
+                       // Moves up
                     });
-                    
-                    kjs.bind("s","shift-ctrl", function(){
 
+                    kjs.bind("a","none", function(){
+                        //moves left
+                    });
+
+                    kjs.bind("s","none", function(){
+                        //moves down
+                    });
+
+                    kjs.bind("d","none", function(){
+                        //moves right;
                     });
 
                 });
@@ -57,7 +67,10 @@ Ducumentation</a></p>
     
     <script>
         
+        var kjs = new Keybinds();
         var canvas, ctx;
+        var x = 90;
+        var y = 80
         
         $(function(){
             
@@ -66,9 +79,46 @@ Ducumentation</a></p>
             
             ctx.font="20px impact";
             ctx.fillStyle='#000';
-            ctx.fillText("KeybindsJS!",90,80);
+            draw();
+                
+            kjs.init(function(){
+
+                kjs.bind("w","none", function(kc){
+                    console.log(kjs.getKey(kc));
+                    y -= 5;
+                    draw();
+                });
+                
+                kjs.bind("a","none", function(kc){
+                    console.log(kjs.getKey(kc));
+                    x -= 5;
+                    draw();
+                });
+                
+                kjs.bind("s","none", function(kc){
+                    console.log(kjs.getKey(kc));
+                    y += 5;
+                    draw();
+                });
+                
+                kjs.bind("d","none", function(kc){
+                    console.log(kjs.getKey(kc));
+                    x += 5;
+                    draw();
+                });
+                
+                 kjs.bind("any","none", function(kc){
+                    console.log(kjs.getKey(kc));
+                });
+
+            });
             
         });
+        
+        function draw(){
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            ctx.fillText("KeybindsJS!",x,y);
+        }
         
     </script>
 </body>

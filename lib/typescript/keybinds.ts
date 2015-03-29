@@ -65,13 +65,14 @@ class Keybinds {
         });
     }
     
-    /* TODO Check for meta key */
+    /* TODO Check for meta key*/
     public bind(key: String, modifyer: String, callback: Function): void{
         event.preventDefault();
+        if(key === "any") callback(event.keyCode);
         if(event.keyCode == this.getKeycode(key)){
             switch(modifyer) {
                 case "none":
-                    if(!event.ctrlKey && !event.shiftKey && !event.altKey) console.log("none"); 
+                    if(!event.ctrlKey && !event.shiftKey && !event.altKey) callback(event.keyCode); //console.log("none");
                     break;
                 case "shift":
                     if(!event.ctrlKey && event.shiftKey && !event.altKey) console.log("shift");

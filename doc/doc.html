@@ -8,7 +8,7 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="lib/keybinds.js"></script>
+    <script src="js/list.min.js"></script>
     <script src="script.js"></script>
     
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/default.min.css">
@@ -17,51 +17,55 @@
 </head>
 <body>
     
-    <div class="container">
-        
-        <!--
-        <div class="panel panel-default">
-            <div class="panel-body">
-
-                <table class="table table-hover">
-                    <tr>
-                        <td>init(element,callback)</td>
-                        <td>text text text</td>
-                        <td>40005105105000</td>
-                    </tr>
-                    <tr>
-                        <td>addKeybind(key,modifier,callback)</td>
-                        <td>text text text</td>
-                        <td>40005105105000</td>
-                    </tr>
-                </table>
-                
-            </div>
-        </div>
-        -->
-        
+    <div class="container" id="list">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h3>KeybindsJS</h3>
-                <div class="panel panel-default" id="first-panel">
-                  <div class="panel-body">
-                    <b>kjs.init()</b><div class="desciption">Inizalation function</div>
-                    <div class="well well-lg exlanation">
-                        Parameters
-                        <ul>
-                            <li>Element</li>
-                            <li>Callback</li>
-                        </ul>
-                      
-                    </div>
-                  </div>
-                </div>
+                <h3>KeybindsJS</h3> <input type="text" class="form-control search" placeholder="Search" style="width:50%; float: right;   margin-top: -7%;">
+                <div class="list">
+                    <div class="panel panel-default" id="first-panel">
+                      <div class="panel-body">
+                          <span class="title"><b>kjs.init()</b></span><span class="desciption">Inizalation function</span>
+                        <div class="well well-lg exlanation">
+                            Parameters
+                            <ul>
+                                <li>Element</li>
+                                <li>Callback</li>
+                            </ul>
 
-                <div class="panel panel-default">
-                  <div class="panel-body">
-                    <b>kjs.addKeybind()</b><div class="desciption">Function for adding a keybind</div>
-                  </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <span class="title"><b>kjs.bind()</b></span><div class="desciption">Function for adding a keybind</div>
+                      </div>
+                    </div>
+                    
+                     <div class="panel panel-default">
+                      <div class="panel-body">
+                        <span class="title"><b>kjs.getKeycode()</b></span><div class="desciption">Returns a keycode from a key</div>
+                      </div>
+                    </div>
+                    
+                     <div class="panel panel-default">
+                      <div class="panel-body">
+                        <span class="title"><b>kjs.getKey()</b></span><div class="desciption">returns a key from a keycode</div>
+                      </div>
+                    </div>
+                    
+                     <div class="panel panel-default">
+                      <div class="panel-body">
+                        <span class="title"><b>kjs.addCostumKey()</b></span><div class="desciption">Function for adding a key witch is not supported</div>
+                      </div>
+                    </div>
+                    
+                     <div class="panel panel-default">
+                      <div class="panel-body">
+                        <span class="title"><b>kjs.logKeys()</b></span><div class="desciption">Function for Logging keys</div>
+                      </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3"></div>
