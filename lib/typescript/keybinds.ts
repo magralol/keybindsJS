@@ -44,26 +44,24 @@ class Keybinds {
     
     private event: any;
     
-    constructor(){
-        
-    }
+    constructor(){}
 
-    public init(element: String, callback: Function): void{
+    public init(callback: Function): void{
         document.addEventListener("keydown", function(e){
             this.event = e;
             callback();
         });
         
-        /* for testing */
+        /* for testing for mouse event*/
         document.addEventListener("click", function(e){
-            e.preventDefault();
             /* 
                 e.clientX and e.clientY for possion 
                 e.target for the target element
                 e.witch or e.button for witch button is pressed
                 
             */
-            console.log(e);
+            this.event = e;
+            callback();
         });
     }
     
@@ -101,7 +99,11 @@ class Keybinds {
             } 
         }
     }
-
+    
+    private mouseEventHandler(): void{
+        console.log("A click event!");
+    }
+    
     public getKeycode(key: String): Number{
         var key: String = key.toUpperCase();
 
