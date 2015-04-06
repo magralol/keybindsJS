@@ -4,12 +4,11 @@ module.exports = function(grunt) {
   grunt.initConfig({
    typescript: {
     base: {
-      src: [__dirname+'/lib/typescript/*.ts'],
+      src: [ __dirname+'/lib/typescript/*.ts'],
       dest: __dirname+'/lib/keybinds.js',
       options: {
         module: 'amd',
         target: 'es5',
-        basePath: 'path/to/typescript/files',
         sourceMap: false,
         declaration: false
       }
@@ -23,7 +22,7 @@ module.exports = function(grunt) {
           spawn: false,
         },
       },
-},    
+  },    
   });
 
 

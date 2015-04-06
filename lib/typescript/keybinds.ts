@@ -43,6 +43,7 @@ class Keybinds {
                                {"key":"SPACE","keycode":32}];
     
     private event: any;
+    private preventdefault: boolean = true;
     
     constructor(){}
 
@@ -65,9 +66,9 @@ class Keybinds {
         });
     }
     
-    /* TODO Check for meta key*/
+    /* TODO Check for meta key, Make e Method for opting out off prevent defult behaviors*/
     public bind(key: String, modifyer: String, callback: Function): void{
-        event.preventDefault();
+        if(this.preventdefault) event.preventDefault();
         if(key === "any") callback(event.keyCode);
         if(event.keyCode == this.getKeycode(key)){
             switch(modifyer) {
@@ -132,4 +133,5 @@ class Keybinds {
         
     }
     
+    public setPreventDefault(status: boolean): void{ this.preventdefault = status;}
 }
