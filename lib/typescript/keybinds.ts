@@ -1,5 +1,6 @@
 class Keybinds {
     
+    // Change to [{"1":49},{"2":50}] <-- more effective no need for a loop to find the value
     private keycodes: any[] = [{"key":"1","keycode":49},
                                {"key":"2","keycode":50},
                                {"key":"3","keycode":51},
