@@ -54,7 +54,7 @@ class Keybinds {
             callback();
         });
         
-        /* for testing for mouse event*/
+        /* REMOVE... DUSE NOT WORK!*/
         document.addEventListener("click", function(e){
             /* 
                 e.clientX and e.clientY for possion 

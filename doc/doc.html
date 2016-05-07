@@ -21,7 +21,13 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h3>KeybindsJS</h3> <input type="text" class="form-control search" placeholder="Search" style="width:50%; float: right;   margin-top: -7%;">
+                <div class="header clearfix">
+                    <span class="pull-right col-md-6 inline" style="margin-top:0.5%;">
+                        <input type="text" placeholder="Search" class="input search" style="width:100%;">
+                    </span>
+                    <h3 class="text-muted col-md-6">Keybinds.JS</h3>
+                  </div>
+                
                 <div class="list">
                     <div class="panel panel-default" id="first-panel">
                       <div class="panel-body">
@@ -69,7 +75,19 @@
                     
                      <div class="panel panel-default">
                       <div class="panel-body">
-                        <span class="title"><b>kjs.logKeys()</b></span><div class="desciption">Function for Logging keys</div>
+                        <span class="title"><b>kjs.logKeys()</b></span><div class="desciption">For development only</div>
+                      </div>
+                    </div>
+                    
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <span class="title"><b>kjs.destroy()</b></span><div class="desciption">Function for for removing eventlistners</div>
+                      </div>
+                    </div>
+                    
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <span class="title"><b>kjs.doc()</b></span><div class="desciption">Returns a link to the documentation</div>
                       </div>
                     </div>
                 </div>
